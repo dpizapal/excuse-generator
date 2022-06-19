@@ -5,54 +5,55 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = () => {
-  //write your code here
-  document.querySelector("#btn").addEventListener("click", () => {
-    document.querySelector("#the-excuse").innerHTML = generateExcuse();
-  });
+//write your code here
 
-  let generateExcuse = () => {
-    let who = [
-      "The dog",
-      "My granma",
-      "A vulture",
-      "My bird",
-      "My little brother",
-      "A comedian"
-    ];
+let generateExcuse = () => {
+  let who = [
+    "The stupid Paladin",
+    "My granma",
+    "An ancient red dragon",
+    "Innocent Raz",
+    "My little brother",
+    "Great Cthulhu"
+  ];
 
-    let action = ["ate", "pissed", "crushed", "broked", "took", "stole"];
+  let action = ["ate", "pissed", "lost", "broked", "took", "stole"];
 
-    let posseion = [
-      "my homework",
-      "the car",
-      "my keys",
-      "the computer",
-      "my umbrella"
-    ];
+  let posseion = [
+    "my sword",
+    "the treasure",
+    "my keys",
+    "the horse",
+    "my +2 ring"
+  ];
 
-    let where = [
-      "during my breakfast",
-      "in my house",
-      "lastnight",
-      "on the street",
-      "at work"
-    ];
+  let where = [
+    "during my guard",
+    "in my house",
+    "lastnight",
+    "in the dungeons",
+    "in Varovia"
+  ];
 
-    let whoindx = Math.floor(Math.random() * who.length);
-    let actionindx = Math.floor(Math.random() * action.length);
-    let possindx = Math.floor(Math.random() * posseion.length);
-    let whereindx = Math.floor(Math.random() * where.length);
+  let whoindx = Math.floor(Math.random() * who.length);
+  let actionindx = Math.floor(Math.random() * action.length);
+  let possindx = Math.floor(Math.random() * posseion.length);
+  let whereindx = Math.floor(Math.random() * where.length);
 
-    return (
-      who[whoindx] +
-      " " +
-      action[actionindx] +
-      " " +
-      posseion[possindx] +
-      " " +
-      where[whereindx]
-    );
-  };
-  console.log(generateExcuse);
+  let excuse =
+    who[whoindx] +
+    " " +
+    action[actionindx] +
+    " " +
+    posseion[possindx] +
+    " " +
+    where[whereindx];
+  document.querySelector("#the-excuse").innerHTML = excuse;
 };
+
+document
+  .querySelector("#btn")
+  .addEventListener("click", () => generateExcuse());
+console.log(generateExcuse);
+
+window.onload = generateExcuse;
